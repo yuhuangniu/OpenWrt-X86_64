@@ -72,11 +72,10 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    #- name: Import external feeds
-    #  working-directory: ./openwrt
-    #  run: |
-    #    git clone https://github.com/Lienol/openwrt-package package/lienol
-    #    git clone "your_github_link" package/"your_folder_name"      
+    - name: Import external feeds
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/vernesong/OpenClash.git package/lean
 
     - name: Configuration Customization - Build OpenWrt_x86_64
       env:
@@ -102,4 +101,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt/bin
+        path: openwrt/bin/targets/x86/64/openwrt-x86-64-combined-squashfs.img.gz
