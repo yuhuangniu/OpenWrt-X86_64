@@ -75,7 +75,7 @@ jobs:
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
-        git clone https://github.com/vernesong/OpenClash.git package/lean/Openclash
+        git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
 
     - name: Configuration Customization - Build OpenWrt_x86_64
       env:
