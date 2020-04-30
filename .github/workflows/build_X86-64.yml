@@ -9,15 +9,15 @@ on:
   release:
     types: [published]
     
-  #push:
-  #  branches:
-  #    - master
+  push:
+    branches:
+      - master
 
   #schedule:
   #  - cron: 0 8 * * 5
   
-  watch:
-    types: [started]
+  #watch:
+  #  types: [started]
 
 jobs:
   build:
@@ -83,7 +83,6 @@ jobs:
         CONFIG_FILE: 'diff.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-      # chmod +x ./custom.sh && ./custom.sh
         cd openwrt && make defconfig
         
     - name: Download package
