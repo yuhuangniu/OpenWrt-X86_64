@@ -13,4 +13,4 @@ Automatic compile OpenWrt using GitHub Actions.
 
 ## License
 
-[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE) 
+[MIT](https://github.com/yuhuangniu/OpenWrt-x86_64/blob/master/LICENSE) 
