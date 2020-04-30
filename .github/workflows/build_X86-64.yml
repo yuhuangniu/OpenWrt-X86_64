@@ -7,7 +7,7 @@ name: Build OpenWrt_x86_64
 
 on: 
   release:
-    types: published
+    types: [published]
     
   push:
     branches:
