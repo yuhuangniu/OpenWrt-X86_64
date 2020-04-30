@@ -1,8 +1,8 @@
 # Actions-OpenWrt
 
-[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
+[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/yuhuangniu/OpenWrt-x86_64/blob/master/LICENSE)
 
-Automatic compile OpenWrt using GitHub Actions.
+Automatic compile OpenWrt X86-64 firmware using GitHub Actions.
 
 [Lean's source](https://github.com/coolsnowwolf/lede) code is employed here. 
 
