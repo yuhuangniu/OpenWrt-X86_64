@@ -6,15 +6,15 @@
 name: Build OpenWrt_x86_64
 
 on: 
-  #release:
-  #  types: [published]
+  release:
+    types: [published]
     
   push:
     branches:
       - master
 
-  schedule:
-    - cron: 0 8 * * 5
+  #schedule:
+  #  - cron: 0 8 * * 5
   
   #watch:
   #  types: [started]
