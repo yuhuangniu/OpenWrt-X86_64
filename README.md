@@ -4,9 +4,9 @@
 
 Automatic compile OpenWrt X86-64 firmware using GitHub Actions.
 
-The latest version of this project is supposed to release on weekly basis.
+The latest version of this project is supposed to be released on weekly basis.
 
-[Lean's source](https://github.com/coolsnowwolf/lede) code is employed here. 
+[Lean's source](https://github.com/coolsnowwolf/lede) code is employed here. Thanks his great pioneering work.
 
 ## Acknowledgments
 
