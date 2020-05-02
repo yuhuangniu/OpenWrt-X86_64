@@ -113,13 +113,13 @@ jobs:
       with:
         name: OpenWrt
         path: openwrt/bin/targets/x86/64/openwrt-x86-64-combined-squashfs.img.gz
-    
-     - name: Upload Targets to release
-       uses: svenstaro/upload-release-action@v1-release
-       with:
-         repo_token: ${{ secrets.super_token }}
-         file: openwrt/bin/targets/x86/64/openwrt-x86-64*
-         asset_name: openwrt-x86-64.gz
-         tag: ${{ env.DATE }}
-         overwrite: true
-         file_glob: true
+
+    - name: Upload Targets to release
+      uses: svenstaro/upload-release-action@v1-release
+      with:
+        repo_token: ${{ secrets.super_token }}
+        file: openwrt/bin/targets/x86/64/openwrt-x86-64*
+        asset_name: openwrt-x86-64.gz
+        tag: ${{ env.DATE }}
+        overwrite: true
+        file_glob: true
