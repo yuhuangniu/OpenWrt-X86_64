@@ -9,9 +9,9 @@ on:
   #release:
   #  types: [published]
     
-  #push:
-  #  branches:
-  #    - master
+  push:
+    branches:
+      - master
 
   schedule:
     - cron: 0 8 * * 5
@@ -26,6 +26,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+
+    - name: Set Date
+      run: |
+         date=$(date +%Y-%m-%d)
+         echo "::set-env name=DATE::$date"
 
     - name: Initialization environment
       env:
@@ -74,6 +79,7 @@ jobs:
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
+        ./scripts/feeds clean
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
@@ -105,5 +111,15 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt
+        name: OpenWrt-x86-64
         path: openwrt/bin/targets/x86/64/openwrt-x86-64-combined-squashfs.img.gz
+    
+     - name: Upload Targets to release
+       uses: svenstaro/upload-release-action@v1-release
+       with:
+         repo_token: ${{ secrets.super_token }}
+         file: openwrt/bin/targets/x86/64/openwrt-x86-64*
+         asset_name: openwrt-x86-64.gz
+         tag: ${{ env.DATE }}
+         overwrite: true
+         file_glob: true
