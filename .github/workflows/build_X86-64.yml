@@ -9,9 +9,9 @@ on:
   #release:
   #  types: [published]
     
-  push:
-    branches:
-      - master
+  #push:
+  #  branches:
+  #    - master
 
   schedule:
     - cron: 0 8 * * 5
@@ -86,7 +86,7 @@ jobs:
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
-        git clone https://github.com/vernesong/OpenClash.git package/lean/OpenClash
+        git clone -b master https://github.com/vernesong/OpenClash.git package/lean/OpenClash
 
     - name: Configuration Customization - Build OpenWrt_x86_64
       env:
@@ -114,7 +114,7 @@ jobs:
         name: OpenWrt
         path: openwrt/bin/targets/x86/64/openwrt-x86-64-combined-squashfs.img.gz
 
-    - name: Upload Targets to release
+    - name: Upload targets to release
       uses: svenstaro/upload-release-action@v1-release
       with:
         repo_token: ${{ secrets.super_token }}
