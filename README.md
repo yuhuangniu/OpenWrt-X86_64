@@ -1,4 +1,4 @@
-# Actions-OpenWrt
+# OpenWrt
 
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/yuhuangniu/OpenWrt-x86_64/blob/master/LICENSE)
 
